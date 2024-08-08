@@ -8,7 +8,7 @@ export const PokemonGrid = ({
   previous,
   results,
 }: TransformPokemons) => {
-  
+  console.log(count,next,previous);
 
   if (!results) return <Skeleton />;
   return (
