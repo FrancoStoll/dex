@@ -1,5 +1,5 @@
 {"compilerOptions": {
-  "noUnusedLocals": false
+  "noUnusedLocals": true,
 },
   "files": [],
   "references": [
