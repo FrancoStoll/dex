@@ -6,7 +6,7 @@ import { BiSearch } from "react-icons/bi";
 
 export const PokemonsPage = () => {
   const [pokemons, setPokemons] = useState<TransformedPokemon[]>();
-  const [offset, setOffset] = useState<number>(20);
+  const [offset, setOffset] = useState<number>(0);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleScroll = () => {
@@ -21,18 +21,13 @@ export const PokemonsPage = () => {
   };
 
   useEffect(() => {
-    fetchData()
-  }, [offset])
-  
-
-  useEffect(() => {
     fetchData();
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [offset]);
 
   const fetchData = () => {
     if (isLoading) return; // Evitar múltiples fetch simultáneos
