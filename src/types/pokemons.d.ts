@@ -7,12 +7,7 @@ export interface Pokemons {
     results: Pokemon[];
 }
 
-export interface TransformPokemons {
-    count: number;
-    next: string;
-    previous: null | string;
-    results: TransformedPokemon[];
-}
+
 export interface TransformedPokemon {
     id: number;
     name: string;

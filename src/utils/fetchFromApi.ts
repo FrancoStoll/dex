@@ -9,9 +9,9 @@ const BASE_URL = "https://pokeapi.co/api/v2/pokemon";
 
 
 
-export async function fetchAllPokemons() {
+export async function fetchAllPokemons(offset: number) {
 
-    const req = await fetch(`${BASE_URL}/?limit=100000`)
+    const req = await fetch(`${BASE_URL}/?limit=20&offset=${+offset}`)
     const res: Pokemons = await req.json();
     const pokemons = await Promise.all(res.results.map(async (pokemon) => {
         const pokeType: Poketype = await getType(pokemon.url)
@@ -19,14 +19,11 @@ export async function fetchAllPokemons() {
             id: pokeType.id,
             name: pokeType.name,
             type: pokeType.types.map(type => type.type.name),
-            
+
         }
     })
     )
     return {
-        count: res.count,
-        next: res.next,
-        previous: res.previous,
         results: pokemons,
     }
 }
