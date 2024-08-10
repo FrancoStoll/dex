@@ -20,9 +20,9 @@ export const PokemonsPage = () => {
     setOffset(offset + 20); // Incrementar offset
   };
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, [offset]);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   useEffect(() => {
     fetchData();
