@@ -1,13 +1,6 @@
-import { Pokemons, Poketype } from "../types/pokemons";
-
-
-
-
+import { Pokemons, Poketype } from '../types/pokemons';
 
 const BASE_URL = "https://pokeapi.co/api/v2/pokemon";
-
-
-
 
 export async function fetchAllPokemons(offset: number) {
 
@@ -19,7 +12,6 @@ export async function fetchAllPokemons(offset: number) {
             id: pokeType.id,
             name: pokeType.name,
             type: pokeType.types.map(type => type.type.name),
-
         }
     })
     )

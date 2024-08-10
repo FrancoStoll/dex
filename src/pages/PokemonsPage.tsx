@@ -21,13 +21,18 @@ export const PokemonsPage = () => {
   };
 
   useEffect(() => {
+    fetchData()
+  }, [offset])
+  
+
+  useEffect(() => {
     fetchData();
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [offset]);
+  }, []);
 
   const fetchData = () => {
     if (isLoading) return; // Evitar múltiples fetch simultáneos
