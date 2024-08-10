@@ -6,7 +6,7 @@ import { BiSearch } from "react-icons/bi";
 
 export const PokemonsPage = () => {
   const [pokemons, setPokemons] = useState<TransformedPokemon[]>();
-  const [offset, setOffset] = useState<number>(0);
+  const [offset, setOffset] = useState<number>(20);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleScroll = () => {
