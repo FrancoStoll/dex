@@ -22,6 +22,10 @@ export const PokemonsPage = () => {
 
   useEffect(() => {
     fetchData();
+  }, [offset]);
+
+  useEffect(() => {
+    fetchData();
     window.addEventListener("scroll", handleScroll);
 
     () => {
