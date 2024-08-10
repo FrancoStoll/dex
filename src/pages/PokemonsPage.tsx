@@ -24,7 +24,7 @@ export const PokemonsPage = () => {
     fetchData();
     window.addEventListener("scroll", handleScroll);
 
-   () => {
+    () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [offset]);
