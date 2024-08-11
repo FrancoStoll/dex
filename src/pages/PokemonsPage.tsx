@@ -6,23 +6,24 @@ import { BiSearch } from "react-icons/bi";
 
 export const PokemonsPage = () => {
   const [pokemons, setPokemons] = useState<TransformedPokemon[]>();
-  const [offset, setOffset] = useState<number>(0);
+  const [offset, setOffset] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleScroll = () => {
-    if (
-      window.innerHeight + document.documentElement.scrollTop !==
-        document.documentElement.offsetHeight ||
-      isLoading
-    ) {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
+    if (isLoading) {
       return;
     }
-    setOffset(offset + 20); // Incrementar offset
+
+    if (clientHeight + scrollTop >= scrollHeight - 5) {
+      setOffset(offset + 20); // Incrementar offset
+    }
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
   useEffect(() => {
     fetchData();
