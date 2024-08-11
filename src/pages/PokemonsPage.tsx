@@ -21,15 +21,17 @@ export const PokemonsPage = () => {
     }
   };
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    fetchData();
+    setOffset(prev => prev + 20)
+  }, []);
 
   useEffect(() => {
+    if (offset === 0) return;
     fetchData();
     window.addEventListener("scroll", handleScroll);
 
-    () => {
+    return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [offset]);
