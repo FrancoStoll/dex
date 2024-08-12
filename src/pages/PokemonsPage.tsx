@@ -8,23 +8,26 @@ import { Footer } from "../components/Footer";
 
 export const PokemonsPage = () => {
   const [pokemons, setPokemons] = useState<TransformedPokemon[]>();
-  const [offset, setOffset] = useState<number>(0);
+  const [offset, setOffset] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
-  const totalPokemons = 640;
-  const handleScroll = debounce(() => {
-    const { scrollTop, clientHeight, offsetHeight } = document.documentElement;
 
-    if (isLoading) return;
-    if (offset >= totalPokemons) return;
-    if (clientHeight + scrollTop >= offsetHeight - 5) setOffset(offset + 20);
-  }, 600);
+  const handleScroll = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop !==
+        document.documentElement.offsetHeight ||
+      isLoading
+    ) {
+      return;
+    }
+    setOffset(offset + 20); // Incrementar offset
+  };
 
   useEffect(() => {
     fetchData();
+    setOffset((prev) => prev + 20);
   }, []);
 
   useEffect(() => {
-    if (offset >= totalPokemons) return;
     fetchData();
     window.addEventListener("scroll", handleScroll);
 
