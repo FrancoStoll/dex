@@ -11,7 +11,7 @@ export const PokemonsPage = () => {
   const [offset, setOffset] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleScroll = () => {
+  const handleScroll = debounce(() => {
     if (
       window.innerHeight + document.documentElement.scrollTop !==
         document.documentElement.offsetHeight ||
@@ -20,11 +20,10 @@ export const PokemonsPage = () => {
       return;
     }
     setOffset(offset + 20); // Incrementar offset
-  };
+  }, 400);
 
   useEffect(() => {
     fetchData();
-    setOffset((prev) => prev + 20);
   }, []);
 
   useEffect(() => {
