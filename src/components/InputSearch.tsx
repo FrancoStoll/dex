@@ -31,8 +31,6 @@ export const InputSearch = () => {
 
   function handleClickOutside(e: MouseEvent) {
     if (resultsRef.current?.contains(e.target as Node)) return;
-    setResults([]);
-    setInput("");
     setHaveResults(false);
   }
 
@@ -46,6 +44,7 @@ export const InputSearch = () => {
   return (
     <div className="flex justify-center items-center px-4 mb-20 w-full relative">
       <input
+        onSelect={() => setHaveResults(true)}
         onChange={(e) => {
           setInput(e.target.value);
           handleSearch(e);
@@ -57,6 +56,7 @@ export const InputSearch = () => {
       <BiSearch
         className="p-4 h-auto w-auto rounded-r-md cursor-pointer bg-blue-950 shadow-md"
         size={25}
+        onClick={() => navigate(`/${input.toLowerCase()}`)}
       />
       {haveResults && (
         <div
