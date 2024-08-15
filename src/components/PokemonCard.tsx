@@ -45,7 +45,7 @@ export const PokemonCard = ({ id, name, type }: TransformedPokemon) => {
       </div>
       <div className="p-6 pt-0 mt-5 w-full leading-snug tracking-tight">
         <Link
-          to={`/bulbasaur`}
+          to={`/${name}`}
           type="button"
           className="border-b border-gray-700"
         >
