@@ -21,7 +21,7 @@ export const ChartStats = ({ stats }: { stats: Stat[] }) => {
 
   return (
     <ResponsiveContainer width="100%" height={300}>
-      <PieChart width={400}>
+      <PieChart className="flex flex-col">
         <Pie
           className="p-5"
           dataKey="value"
@@ -36,6 +36,7 @@ export const ChartStats = ({ stats }: { stats: Stat[] }) => {
           }
           isAnimationActive={true}
         />
+
         <Tooltip />
         <Legend layout="vertical" verticalAlign="middle" align="right" />
       </PieChart>

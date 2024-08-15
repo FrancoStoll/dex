@@ -8,13 +8,25 @@ export const Footer = () => {
             <p className="text-sm">© 2024 Creado por Franco Stoll ❤</p>
           </div>
           <div className="flex space-x-4">
-            <a href="#" className="text-gray-500 hover:text-gray-700">
+            <a
+              href="https://github.com/FrancoStoll"
+              target="_blank"
+              className="text-gray-500 hover:text-gray-700"
+            >
               Github
             </a>
-            <a href="#" className="text-gray-500 hover:text-gray-700">
-              Li nkedin
+            <a
+              href="https://www.linkedin.com/in/franco-stoll/"
+              target="_blank"
+              className="text-gray-500 hover:text-gray-700"
+            >
+              Linkedin
             </a>
-            <a href="#" className="text-gray-500 hover:text-gray-700">
+            <a
+              href="https://www.linkedin.com/in/franco-stoll/"
+              target="_blank"
+              className="text-gray-500 hover:text-gray-700"
+            >
               Contact
             </a>
           </div>

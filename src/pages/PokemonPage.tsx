@@ -6,6 +6,8 @@ import { AbilityElement } from "../types/pokemon";
 import { ChartStats } from "../components/ChartStats";
 import { Ability } from "../components/Ability";
 import { PokemonProfileCard } from "../components/PokemonProfileCard";
+import { ChartStatMobile } from "../components/ChartStatMobile";
+import { BackButton } from "../components/BackButton";
 
 export const PokemonPage = () => {
   const params = useParams();
@@ -29,7 +31,8 @@ export const PokemonPage = () => {
   const { weight, ability, height, id, stats, types } = singlePokemon;
 
   return (
-    <div className="text-black flex max-w-7xl mx-auto px-4 gap-12">
+    <div className="text-black flex flex-col md:flex-row max-w-7xl mx-auto px-4 gap-12 min-h-screen relative">
+      <BackButton />
       <PokemonProfileCard
         id={id}
         types={types}
@@ -39,7 +42,12 @@ export const PokemonPage = () => {
       <div className="flex flex-col p-4 flex-1 shadow-xl mt-20 rounded-xl bg-white gap-12">
         <div className="flex flex-wrap justify-center">
           <p className="text-gray-700 text-4xl font-black -mb-10">Stats Base</p>
-          <ChartStats stats={stats} />
+          <div className="hidden md:block w-full">
+            <ChartStats stats={stats} />
+          </div>
+          <div className="block md:hidden w-full mt-10">
+            <ChartStatMobile stats={stats} />
+          </div>
         </div>
         <div className="flex flex-col items-center justify-center">
           <p className="text-gray-700 text-4xl font-black">Abilities</p>

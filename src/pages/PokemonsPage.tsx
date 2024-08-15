@@ -4,7 +4,7 @@ import { TransformedPokemon } from "../types/pokemons";
 import { PokemonGrid } from "../components/PokemonGrid";
 import debounce from "lodash/debounce";
 import { InputSearch } from "../components/InputSearch";
-import { Footer } from "../components/Footer";
+
 
 export const PokemonsPage = () => {
   const [pokemons, setPokemons] = useState<TransformedPokemon[]>();
@@ -50,10 +50,7 @@ export const PokemonsPage = () => {
   return (
     <section className="max-w-7xl mx-auto pt-20 antialiased">
       <InputSearch />
-
       <PokemonGrid isLoading={isLoading} pokemons={pokemons!} />
-
-      <Footer />
     </section>
   );
 };
