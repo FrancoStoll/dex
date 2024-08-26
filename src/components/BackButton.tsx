@@ -8,7 +8,7 @@ export const BackButton = () => {
       onClick={() => navigate(-1)}
       className="flex absolute right-4 mt-4 z-20 items-center gap-2 cursor-pointer"
     >
-      <span className="text-black text-pretty z-20 border-b border-gray-400">
+      <span className="text-black text-pretty z-20 border-gray-400">
         Back
       </span>
       <div className="p-3 bg-gray-200 cursor-pointer rounded-full">

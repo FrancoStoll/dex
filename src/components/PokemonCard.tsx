@@ -4,7 +4,7 @@ import { pokemonTypeColors, pokemonTypeEmojis } from "../utils/colors";
 
 export const PokemonCard = ({ id, name, type }: TransformedPokemon) => {
   return (
-    <div className="relative z-0 flex w-80 flex-col items-center rounded-xl bg-white text-gray-700 shadow-xl mt-14">
+    <div className="relative z-0 flex w-80 flex-col items-center rounded-xl bg-white text-gray-700 shadow-xl mt-14 animate__animated animate__backInUp">
       <img
         src="/bg-pokeball.png"
         alt="bgpokeball"

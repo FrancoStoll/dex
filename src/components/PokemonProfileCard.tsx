@@ -10,7 +10,7 @@ interface Props {
 
 export const PokemonProfileCard = ({ id, types, weight, height }: Props) => {
   return (
-    <div className="flex flex-col gap-4 mt-28 shadow-xl p-4 rounded-xl bg-white">
+    <div className="flex flex-col gap-4 mt-28 shadow-xl p-4 rounded-xl bg-white animate__animated animate__backInLeft">
       <img
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`}
         alt="pokemon"

@@ -31,7 +31,7 @@ export const PokemonPage = () => {
   const { weight, ability, height, id, stats, types } = singlePokemon;
 
   return (
-    <div className="text-black flex flex-col md:flex-row max-w-7xl mx-auto px-4 gap-12 min-h-screen relative">
+    <div className="text-black flex flex-col md:flex-row max-w-7xl mx-auto px-4 gap-12 relative">
       <BackButton />
       <PokemonProfileCard
         id={id}
@@ -39,7 +39,7 @@ export const PokemonPage = () => {
         weight={weight}
         height={height}
       />
-      <div className="flex flex-col p-4 flex-1 shadow-xl mt-20 rounded-xl bg-white gap-12">
+      <div className="flex flex-col p-4 flex-1 shadow-xl mt-20 rounded-xl bg-white gap-12 animate__animated animate__backInRight">
         <div className="flex flex-wrap justify-center">
           <p className="text-gray-700 text-4xl font-black -mb-10">Stats Base</p>
           <div className="hidden md:block w-full">
